@@ -1,10 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import homepath
+from . import views
 
 
 urlpatterns = [
-    path('', homepath, name='home'),
+    path('', views.getRoutes, name='routes'),
+    path('products/', views.getProducts, name='products'),
+    path('products/<str:pk>/', views.getProduct, name='product'),
+
 
 
 ]
