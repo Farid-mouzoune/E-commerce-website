@@ -10,7 +10,7 @@ function ProductScreen({ match }) {
     useEffect(() => {
 
         async function fetchProduct(){
-            const { data } = await axios.get(`/api/products/${match.params.id}`)
+            const { data } = await axios.get(`/api/products/${match.params.id}/`)
             setProduct(data)
         }
         fetchProduct()
@@ -24,7 +24,7 @@ function ProductScreen({ match }) {
 
                 <Col md={6}>
                     <Image src={product.image} alt={product.name} fluid/> 
-                
+
                 </Col>
                 <Col md={3}>
 

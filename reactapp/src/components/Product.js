@@ -3,16 +3,14 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Rating from './Rating.js'
 
-
-
 function Product({product}) {
     return (
         <Card className="my-3 p3 rounded">
-            <Link to={`/product/${product._id}`}>
+            <Link to={`/product/${product.id}`}>
                 <Card.Img src={product.image} />    
             </Link>            
             <Card.Body>
-                <Link to={`/product/${product._id}`}>
+                <Link to={`/product/${product.id}`}>
                     <Card.Title as="div">
                         <strong>
                             {product.name}
@@ -22,7 +20,7 @@ function Product({product}) {
 
                     <Card.Text as="div">
                         <div className="my-3">
-                            {product.rating} from {product.numReviews} reviews
+                            {/* {product.rating} from {product.numReviews} reviews */}
                             <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#f8e825'}/>
                         </div>
                     </Card.Text>
